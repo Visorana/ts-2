@@ -12,11 +12,7 @@ export default class Cart {
     }
 
     calculateTotalPrice(): number {
-        let totalPrice = 0;
-        for (const item of this.items) {
-            totalPrice += item.price;
-        }
-        return totalPrice;
+        return this._items.reduce((total, item) => total + item.price, 0);
     }
 
     calculateTotalPriceWithDiscount(discount: number): number {
